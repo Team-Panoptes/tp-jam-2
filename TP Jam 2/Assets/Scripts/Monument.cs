@@ -49,7 +49,7 @@ public class Monument : Room
             GameObject room = SubRoomsRepository.GiveARoom();
             room.transform.parent = transform;
             room.transform.position = cursor;
-            
+
             SubRoom subRoom = room.GetComponent<SubRoom>();
             cursor.y += subRoom.size.y;
         }
@@ -60,7 +60,7 @@ public class Monument : Room
         Color color = Color.green;
         color.a = 0.25f;
         Gizmos.color = color;
-        Gizmos.DrawWireCube(size / 2, size + Vector3.one*2);
+        Gizmos.DrawWireCube(size / 2 + transform.position, size + Vector3.one*2);
     }
 
     
