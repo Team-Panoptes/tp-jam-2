@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8505831015638235336}
   - component: {fileID: 8505831015638235333}
   - component: {fileID: 8505831015638235332}
+  - component: {fileID: 6960935478709953619}
   m_Layer: 0
   m_Name: TeleportSphere
   m_TagString: TeleportSphere
@@ -308,3 +309,19 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &6960935478709953619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8505831015638235343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c71dfc42d6e974e88556abdb28247b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointLight: {fileID: 8190156702871700587}
+  readyColor: {r: 0.035793543, g: 1, b: 0, a: 0}
+  inactiveColor: {r: 1, g: 0, b: 0, a: 0}
+  rigidBody: {fileID: 8505831015638235333}
