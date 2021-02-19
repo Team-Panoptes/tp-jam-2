@@ -23,9 +23,26 @@ public class SubRoomsRepository : MonoBehaviour
         }
     }
 
-    public static GameObject GiveARoom(){
-        GameObject room = rooms[Random.Range(0, rooms.Count)];
+    public static GameObject GiveARoom(bool randomRotation=true){
+        if(randomRotation){
+            Quaternion rotation = Orientation.north;
+            int rnd = Random.Range(0,5);
+            
+            if(rnd==0) rotation = Orientation.south;
+            else if(rnd==1) rotation = Orientation.west;
+            else if(rnd==2) rotation = Orientation.east;
 
+            return GiveARoom(rotation);
+            
+        }
+
+        GameObject room = rooms[Random.Range(0, rooms.Count)];
         return Instantiate(room);
+    }
+
+    public static GameObject GiveARoom(Quaternion rotation){
+        GameObject room = GiveARoom(false);
+        Orientation.ApplyOrientation(room, rotation);
+        return room;
     }
 }

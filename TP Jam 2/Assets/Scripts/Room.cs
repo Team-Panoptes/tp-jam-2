@@ -23,7 +23,8 @@ public class Room : Piece
     [Header("Others")]
     public Vector3 doorInPlace = Vector3.zero;
     public Vector3 doorOutPlace = Vector3.one;
-
+    [Header("color")]
+    public Color color = Color.green;
 
     protected virtual void Start(){
         Generate();
@@ -182,14 +183,10 @@ public class Room : Piece
         return false;
     }
 
-    
-
-
-
     protected virtual void OnDrawGizmosSelected()
     {
-        Color color = Color.green;
+        Color color = this.color;
         Gizmos.color = color;
-        Gizmos.DrawWireCube(size / 2, size);
+        Gizmos.DrawWireCube(size / 2 + transform.position, size);
     }
 }

@@ -16,54 +16,76 @@ public class Monument : Room
         base.Generate();
     }
 
-        protected void DefineSize()
+    protected void DefineSize()
     {
         int x = Random.Range((int)minSize.x, (int)maxSize.x + 1);
         int y = Random.Range((int)minSize.y, (int)maxSize.y + 1);
         int z = Random.Range((int)minSize.z, (int)maxSize.z + 1);
         size = new Vector3(x, y, z);
     }
-   protected override void PlaceEntry()
+    protected override void PlaceEntry()
     {
 
         //test which edges entry will touches
 
-        int x = Random.Range(0, (int)(size.x/2));
+        int x = Random.Range(0, (int)(size.x / 2));
         int y = Random.Range(0, Mathf.Min((int)size.y - 2, 5));
 
-        doorInPlace = new Vector3(x, y ,0);
+        doorInPlace = new Vector3(x, y, 0);
 
         base.PlaceEntry();
     }
 
 
-    protected void AddSubRooms(){
-        if(SubRoomsRepository.rooms.Count == 0) {
+    protected void AddSubRooms()
+    {
+        if (SubRoomsRepository.rooms.Count == 0)
+        {
             Debug.LogError("No sub rooms found", gameObject);
-            return;}
-        Vector3 sizeMax = size;
+            return;
+        }
+        Vector3 newSize = Vector3.zero;
+        newSize.y = size.y;
+
         Vector3 cursor = doorInPlace;
         cursor.y = Random.Range(0, doorInPlace.y + 1);
 
-        while(cursor.y < size.y-4) {
+        int y = 0;
+
+        while (cursor.y < size.y - 4)
+        {
             GameObject room = SubRoomsRepository.GiveARoom();
             room.transform.parent = transform;
             room.transform.position = cursor;
 
             SubRoom subRoom = room.GetComponent<SubRoom>();
-            cursor.y += subRoom.size.y;
+            y = Mathf.Max((int)subRoom.size.y, y);
+            
+            if(Random.Range(0,2)==0){
+            cursor.x += subRoom.size.x;
+            newSize.x = Mathf.Max(newSize.x, cursor.x);
+            newSize.z = Mathf.Max(newSize.z, cursor.z + subRoom.size.z);
+            }
+            else {    
+            cursor.z += subRoom.size.z;
+            newSize.z = Mathf.Max(newSize.z, cursor.z);
+            newSize.x = Mathf.Max(newSize.x, cursor.x + subRoom.size.x);
+            }
+
+            if(cursor.x > size.x || cursor.z > size.z){
+                cursor = new Vector3(Mathf.Min(0,(int)(size.x - cursor.x)), cursor.y + y, 0);
+                y = 0;
+            }
         }
+        size = newSize;
     }
     protected override void OnDrawGizmosSelected()
     {
         base.OnDrawGizmosSelected();
-        Color color = Color.green;
+        Color color = this.color;
         color.a = 0.25f;
         Gizmos.color = color;
-        Gizmos.DrawWireCube(size / 2 + transform.position, size + Vector3.one*2);
+        Gizmos.DrawWireCube(size / 2 + transform.position, size + Vector3.one * 2);
     }
 
-    
-
- 
 }
