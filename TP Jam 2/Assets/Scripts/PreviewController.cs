@@ -50,7 +50,6 @@ public class PreviewController : MonoBehaviour
             material = renderer.GetMaterial();
             material.SetFloat("_Aperture", currentAperture);
             //renderer.SetMaterial(material, 0);
-            Debug.Log("Changing the aperture! to : " + currentAperture.ToString());
         }
     }
 }

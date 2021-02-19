@@ -15,6 +15,8 @@ public class SphereManager : MonoBehaviour
     private XRBaseInteractable interactable;
     public Rigidbody rigidBody;
 
+    public XRBaseInteractor interactor;
+
     private bool active;
     public bool isActive
     {
@@ -37,6 +39,16 @@ public class SphereManager : MonoBehaviour
     {
         renderer = GetComponent<Renderer>();
         interactable = GetComponent<XRBaseInteractable>();
+        interactable.selectEntered.AddListener(OnSelected);
+        interactable.selectExited.AddListener(OnDeselected);
+    }
+
+    void OnSelected(SelectEnterEventArgs context) {
+        interactor = context.interactor;
+    }
+
+    void OnDeselected(SelectExitEventArgs context) {
+        interactor = null;
     }
 
 
