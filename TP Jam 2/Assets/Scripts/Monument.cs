@@ -83,8 +83,9 @@ public class Monument : Room
                         cursor = new Vector3(x, cursor.y + y, 0);}
                 else{
                     cursor.y += y;
+                    cursor.z -= subRoom.size.z;
+                    cursor.x -= subRoom.size.x;
                 }
-
                 y = 0;
             }
         }
