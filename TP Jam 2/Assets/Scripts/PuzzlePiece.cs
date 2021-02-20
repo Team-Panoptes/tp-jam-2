@@ -25,7 +25,7 @@ public class PuzzlePiece : Piece
             {
                 for (int z = 0; z < size.z; z++)
                 {
-                    if (Random.Range(0, 1f) <= coverage)
+                    if (Random.Range(0f, 1f) <= coverage)
                     {
                         Quaternion rotation = Orientation.north;
                         if (randomRotation) rotation = Orientation.RandomOrientation();
