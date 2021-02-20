@@ -32,7 +32,7 @@ public class Teleport : MonoBehaviour
     void DoTeleport(InputAction.CallbackContext context) {
         if (sphereManager.isActive) {
             Debug.Log("TELEPORT!");
-            playerTransform.position = teleportSphere.position - Vector3.ProjectOnPlane(mainCamera.transform.localPosition, Vector3.up) - Vector3.up * 0.05f;
+            playerTransform.position = sphereManager.validPositionFound - Vector3.ProjectOnPlane(mainCamera.transform.localPosition, Vector3.up) - Vector3.up * 0.05f;
         }
     }
 }

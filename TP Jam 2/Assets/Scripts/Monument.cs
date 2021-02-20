@@ -50,7 +50,7 @@ public class Monument : Room
         newSize.y = size.y;
 
         Vector3 cursor = doorInPlace;
-        cursor.y = Random.Range(0, doorInPlace.y + 1);
+        cursor.y = Mathf.Floor(Random.Range(0, doorInPlace.y));
 
         int y = 0;
         GameObject room;
