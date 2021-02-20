@@ -169,6 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3219907416003218263}
   - component: {fileID: 3219907416003218256}
+  - component: {fileID: 1853794722}
   m_Layer: 0
   m_Name: subroom 5x5x5
   m_TagString: Untagged
@@ -212,7 +213,8 @@ MonoBehaviour:
   - {fileID: 919132149155446097, guid: 87fd932cc9bb8a44d900fbf9dfb535c1, type: 3}
   wallPrefabs: []
   roofPrefabs:
-  - {fileID: 430463515933535709, guid: e33837c277a4a404a98242bfbdbe2706, type: 3}
+  - {fileID: 919132149155446097, guid: b54a9f9337e063540bc58c6e57a67d17, type: 3}
+  - {fileID: 919132149155446097, guid: 6818f45cec921064197eb9058fad322c, type: 3}
   groundInside: 1
   roofInside: 1
   groundCoverage: 0.9
@@ -224,3 +226,15 @@ MonoBehaviour:
   doorInPlace: {x: 0, y: 0, z: 0}
   doorOutPlace: {x: 1, y: 1, z: 1}
   color: {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &1853794722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219907416003218262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f88c099167d2b64d81f2d7be922ef3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

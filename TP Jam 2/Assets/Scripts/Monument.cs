@@ -75,9 +75,16 @@ public class Monument : Room
             newSize.x = Mathf.Max(newSize.x, cursor.x + subRoom.size.x);
             }
 
-            if(cursor.x > size.x || cursor.z > size.z){
-                int x = Mathf.Max((int)doorInPlace.x + (int)Random.Range(-2, 3), 0);
-                cursor = new Vector3(x, cursor.y + y, 0);
+            if((cursor.x > size.x || cursor.z > size.z)){
+
+                if(cursor.y + y < size.y - 4)
+                    {
+                        int x = Mathf.Max((int)doorInPlace.x + (int)Random.Range(-2, 3), 0);
+                        cursor = new Vector3(x, cursor.y + y, 0);}
+                else{
+                    cursor.y += y;
+                }
+
                 y = 0;
             }
         }

@@ -266,16 +266,12 @@ MonoBehaviour:
   size: {x: 5, y: 6, z: 5}
   entryPrefabs: []
   groundPrefabs:
-  - {fileID: 919132149155446097, guid: d7d5a1301b28fbb41a48136e184001be, type: 3}
-  - {fileID: 919132149155446097, guid: 1bc375885a92e7a40b22051d68fd1f39, type: 3}
-  - {fileID: 919132149155446097, guid: a1e98cd77129ac24e928925d09d2addc, type: 3}
-  - {fileID: 919132149155446097, guid: 95f80e615ab9f20469d70914eb6bccce, type: 3}
+  - {fileID: 919132149155446097, guid: 3446df518561927479ec23d9d5a6ff21, type: 3}
+  - {fileID: 919132149155446097, guid: 87fd932cc9bb8a44d900fbf9dfb535c1, type: 3}
   wallPrefabs: []
   roofPrefabs:
-  - {fileID: 919132149155446097, guid: d7d5a1301b28fbb41a48136e184001be, type: 3}
-  - {fileID: 919132149155446097, guid: 1bc375885a92e7a40b22051d68fd1f39, type: 3}
-  - {fileID: 919132149155446097, guid: a1e98cd77129ac24e928925d09d2addc, type: 3}
-  - {fileID: 919132149155446097, guid: 95f80e615ab9f20469d70914eb6bccce, type: 3}
+  - {fileID: 919132149155446097, guid: b54a9f9337e063540bc58c6e57a67d17, type: 3}
+  - {fileID: 919132149155446097, guid: 6818f45cec921064197eb9058fad322c, type: 3}
   groundInside: 1
   roofInside: 1
   groundCoverage: 0.7
