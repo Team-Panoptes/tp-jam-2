@@ -12,7 +12,7 @@ public class SubRoom : Room
     {
         
     }
-    protected override void OnDrawGizmosSelected()
+    protected virtual void OnDrawGizmos()
     {
         base.OnDrawGizmosSelected();
     }

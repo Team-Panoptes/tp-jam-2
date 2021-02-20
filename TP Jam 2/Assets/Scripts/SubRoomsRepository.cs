@@ -30,12 +30,7 @@ public class SubRoomsRepository : MonoBehaviour
     {
         if (randomRotation)
         {
-            Quaternion rotation = Orientation.north;
-            int rnd = Random.Range(0, 5);
-
-            if (rnd == 0) rotation = Orientation.south;
-            else if (rnd == 1) rotation = Orientation.west;
-            else if (rnd == 2) rotation = Orientation.east;
+            Quaternion rotation = Orientation.RandomOrientation();
 
             return GiveARoom(rotation, parent);
 
@@ -57,13 +52,7 @@ public class SubRoomsRepository : MonoBehaviour
     public static GameObject GiveAFinalRoom(Transform parent)
     {
 
-        Quaternion rotation = Orientation.north;
-        int rnd = Random.Range(0, 5);
-
-        if (rnd == 0) rotation = Orientation.south;
-        else if (rnd == 1) rotation = Orientation.west;
-        else if (rnd == 2) rotation = Orientation.east;
-
+        Quaternion rotation = Orientation.RandomOrientation();
 
         GameObject room = Instantiate(finalRooms[Random.Range(0, finalRooms.Count)]);
         room.transform.parent = parent;
