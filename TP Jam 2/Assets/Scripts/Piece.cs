@@ -74,7 +74,9 @@ public class Piece : MonoBehaviour
     {
         GameObject item = ChooseOne(prefabs);
         item.transform.position = position;
-        item.GetComponent<Piece>().Generate();
+        Piece piece = item.GetComponent<Piece>();
+        if(piece == null) piece = item.AddComponent<Piece>();
+        piece.Generate();
         Orientation.ApplyOrientation(item, rotation);
         return item;
     }
