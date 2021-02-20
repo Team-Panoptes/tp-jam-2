@@ -9,7 +9,19 @@ public class Orientation
     public static Quaternion east = Quaternion.Euler(0, 90, 0);
     public static Quaternion west = Quaternion.Euler(0, -90, 0);
 
-    public static Vector3 Decal (GameObject item, Quaternion rotation){
+    public static Quaternion RandomOrientation()
+    {
+        Quaternion rotation = Orientation.north;
+        int rnd = Random.Range(0, 5);
+
+        if (rnd == 0) rotation = Orientation.south;
+        else if (rnd == 1) rotation = Orientation.west;
+        else if (rnd == 2) rotation = Orientation.east;
+        return rotation;
+    }
+
+    public static Vector3 Decal(GameObject item, Quaternion rotation)
+    {
         Piece piece = item.GetComponent<Piece>();
         if (piece == null)
         {
@@ -19,7 +31,7 @@ public class Orientation
 
         if (rotation == east) return Vector3.forward * piece.size.z;
         if (rotation == west) return Vector3.right * piece.size.x;
-        if(rotation == south) return Vector3.forward * piece.size.z + Vector3.right * piece.size.x;
+        if (rotation == south) return Vector3.forward * piece.size.z + Vector3.right * piece.size.x;
         return Vector3.zero;
     }
 
@@ -49,5 +61,21 @@ public class Piece : MonoBehaviour
     public Vector3 size = Vector3.one;
     protected bool isGenerated = false;
     public virtual void Generate()
-    {if(isGenerated)return;}
+    { if (isGenerated) return; }
+
+    protected GameObject ChooseOne(List<GameObject> prefabs)
+    {
+        GameObject item = Instantiate(prefabs[Random.Range(0, prefabs.Count)]);
+        item.transform.parent = transform;
+        return item;
+    }
+
+    protected GameObject ChooseOne(List<GameObject> prefabs, Vector3 position, Quaternion rotation)
+    {
+        GameObject item = ChooseOne(prefabs);
+        item.transform.position = position;
+        item.GetComponent<Piece>().Generate();
+        Orientation.ApplyOrientation(item, rotation);
+        return item;
+    }
 }

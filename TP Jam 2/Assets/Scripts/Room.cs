@@ -34,7 +34,9 @@ public class Room : Piece
     public override void Generate()
     {
         if(isGenerated) return;
-
+        foreach(PuzzlePiece piece in GetComponentsInChildren<PuzzlePiece>()){
+            piece.Fill();
+        }
         PlaceEntry();
 
         PlaceGround();
@@ -43,22 +45,8 @@ public class Room : Piece
         PlaceWallX((int)size.x, eastCorerage, Orientation.west);
         PlaceWallZ(-1, southCorerage, Orientation.north);
         PlaceWallZ((int)size.z, northCorerage, Orientation.south);
+
         isGenerated = true;
-    }
-
-    protected GameObject ChooseOne(List<GameObject> prefabs)
-    {
-        GameObject item = Instantiate(prefabs[Random.Range(0, prefabs.Count)]);
-        item.transform.parent = transform;
-        return item;
-    }
-
-    protected GameObject ChooseOne(List<GameObject> prefabs, Vector3 position, Quaternion rotation){
-        GameObject item = ChooseOne(prefabs);
-        item.transform.position = position;
-        item.GetComponent<Piece>().Generate();
-        Orientation.ApplyOrientation(item, rotation);
-        return item;
     }
 
     protected Quaternion StickToTheAWall(Vector3 position){
