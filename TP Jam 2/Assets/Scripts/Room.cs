@@ -185,8 +185,11 @@ public class Room : Piece
 
     protected virtual void OnDrawGizmosSelected()
     {
+
         Color color = this.color;
         Gizmos.color = color;
-        Gizmos.DrawWireCube(size / 2 + transform.position, size);
+        Vector3 decal = Orientation.Decal(gameObject, transform.rotation) * -1;
+        Gizmos.DrawWireCube(size / 2 + transform.position + decal, size);
+
     }
 }

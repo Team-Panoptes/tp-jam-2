@@ -56,7 +56,7 @@ public class Monument : Room
         {
             GameObject room = SubRoomsRepository.GiveARoom();
             room.transform.parent = transform;
-            room.transform.position = cursor;
+            room.transform.position = cursor + Orientation.Decal(room, room.transform.rotation);            
 
             SubRoom subRoom = room.GetComponent<SubRoom>();
             y = Mathf.Max((int)subRoom.size.y, y);
@@ -73,7 +73,8 @@ public class Monument : Room
             }
 
             if(cursor.x > size.x || cursor.z > size.z){
-                cursor = new Vector3(Mathf.Min(0,(int)(size.x - cursor.x)), cursor.y + y, 0);
+                int x = Mathf.Max((int)doorInPlace.x + (int)Random.Range(-2, 3), 0);
+                cursor = new Vector3(x, cursor.y + y, 0);
                 y = 0;
             }
         }
@@ -85,7 +86,8 @@ public class Monument : Room
         Color color = this.color;
         color.a = 0.25f;
         Gizmos.color = color;
-        Gizmos.DrawWireCube(size / 2 + transform.position, size + Vector3.one * 2);
+        Vector3 decal = Orientation.Decal(gameObject, transform.rotation) * -1;
+        Gizmos.DrawWireCube(size / 2 + transform.position + decal, size + Vector3.one * 2);
     }
 
 }
