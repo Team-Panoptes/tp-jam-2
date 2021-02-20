@@ -47,4 +47,7 @@ public class Piece : MonoBehaviour
 {
     [Header("Size")]
     public Vector3 size = Vector3.one;
+    protected bool isGenerated = false;
+    public virtual void Generate()
+    {if(isGenerated)return;}
 }

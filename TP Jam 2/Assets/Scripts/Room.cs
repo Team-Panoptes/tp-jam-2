@@ -13,6 +13,8 @@ public class Room : Piece
     public List<GameObject> roofPrefabs;
 
     [Header("Coverage")]
+    public bool groundInside = false;
+    public bool roofInside = false;
     public float groundCoverage = 1f;
     public float roofCoverage = 1f;
     public float northCorerage = 1f;
@@ -25,13 +27,14 @@ public class Room : Piece
     public Vector3 doorOutPlace = Vector3.one;
     [Header("color")]
     public Color color = Color.green;
-
     protected virtual void Start(){
         Generate();
     }
 
-    public virtual void Generate()
+    public override void Generate()
     {
+        if(isGenerated) return;
+
         PlaceEntry();
 
         PlaceGround();
@@ -40,6 +43,7 @@ public class Room : Piece
         PlaceWallX((int)size.x, eastCorerage, Orientation.west);
         PlaceWallZ(-1, southCorerage, Orientation.north);
         PlaceWallZ((int)size.z, northCorerage, Orientation.south);
+        isGenerated = true;
     }
 
     protected GameObject ChooseOne(List<GameObject> prefabs)
@@ -52,6 +56,7 @@ public class Room : Piece
     protected GameObject ChooseOne(List<GameObject> prefabs, Vector3 position, Quaternion rotation){
         GameObject item = ChooseOne(prefabs);
         item.transform.position = position;
+        item.GetComponent<Piece>().Generate();
         Orientation.ApplyOrientation(item, rotation);
         return item;
     }
@@ -98,13 +103,25 @@ public class Room : Piece
     {
         if (groundPrefabs.Count == 0 || groundCoverage <= 0f) return;
 
+        int y = -1;
+        int startX = -1;
+        int startZ = -1;
+        int endX = (int)size.x + 1;
+        int endZ = (int)size.z + 1;
 
-        for (int x = -1; x < size.x + 1; x++)
+        if(groundInside) {
+            y = 0;
+            startX = 0;
+            startZ = 0;
+            endX -= 1;
+            endZ -= 1;}
+
+        for (int x = startX; x < endX; x++)
         {
-            for (int z = -1; z < size.z + 1; z++)
+            for (int z = startZ; z < endZ; z++)
             {
                 if(Random.Range(0f, 1f) <= groundCoverage){
-                    Vector3 position = new Vector3(x, -1 , z);
+                    Vector3 position = new Vector3(x, y , z)  + transform.position;
                     ChooseOne(groundPrefabs, position, Orientation.north);
                 }
             }
@@ -115,13 +132,25 @@ public class Room : Piece
     {
         if (roofPrefabs.Count == 0 || roofCoverage <= 0f) return;
 
+        int y = (int)size.y;
+        int startX = -1;
+        int startZ = -1;
+        int endX = (int)size.x + 1;
+        int endZ = (int)size.z + 1;
 
-        for (int x = -1; x < size.x + 1; x++)
+        if(roofInside) {
+            y -= 1;
+            startX = 0;
+            startZ = 0;
+            endX -= 1;
+            endZ -= 1;}
+
+        for (int x = startX; x < endX; x++)
         {
-            for (int z = -1; z < size.z + 1; z++)
+            for (int z = startZ; z < endZ; z++)
             {
                 if(Random.Range(0f, 1f) <= roofCoverage){
-                    Vector3 position = new Vector3(x, size.y, z);
+                    Vector3 position = new Vector3(x, y, z) + transform.position;
                     ChooseOne(roofPrefabs, position, Orientation.north);
                 }
             }
@@ -141,7 +170,7 @@ public class Room : Piece
                 {
                     if (Random.Range(0f, 1f) <= coverage)
                     {
-                        Vector3 position = new Vector3(x, y, z);
+                        Vector3 position = new Vector3(x, y, z)  + transform.position;
                         ChooseOne(wallPrefabs, position, rotation);
                     }
                 }
@@ -162,7 +191,7 @@ public class Room : Piece
                 {
                     if (Random.Range(0f, 1f) <= coverage)
                     {
-                        Vector3 position = new Vector3(x, y, z);
+                        Vector3 position = new Vector3(x, y, z)  + transform.position;
                         ChooseOne(wallPrefabs, position, rotation);
                     }
                 }
@@ -190,6 +219,9 @@ public class Room : Piece
         Gizmos.color = color;
         Vector3 decal = Orientation.Decal(gameObject, transform.rotation) * -1;
         Gizmos.DrawWireCube(size / 2 + transform.position + decal, size);
+
+        if(groundInside || roofInside)
+            Gizmos.DrawWireCube(size / 2 + transform.position + decal, size - Vector3.up * 2);
 
     }
 }

@@ -8,9 +8,11 @@ public class Monument : Room
     [Header("Size")]
     public Vector3 minSize = new Vector3(10, 10, 10);
     public Vector3 maxSize = new Vector3(30, 30, 30);
-
+    [Header("Code")]
+    public string symbol;
     public override void Generate()
     {
+        if(isGenerated)return;
         DefineSize();
         AddSubRooms();
         base.Generate();
@@ -51,14 +53,15 @@ public class Monument : Room
         cursor.y = Random.Range(0, doorInPlace.y + 1);
 
         int y = 0;
-
+        GameObject room;
+        SubRoom subRoom;
         while (cursor.y < size.y - 4)
         {
-            GameObject room = SubRoomsRepository.GiveARoom();
-            room.transform.parent = transform;
-            room.transform.position = cursor + Orientation.Decal(room, room.transform.rotation);            
+            room = SubRoomsRepository.GiveARoom(transform);
+            subRoom = room.GetComponent<SubRoom>();
+            room.transform.localPosition = cursor + Orientation.Decal(room, room.transform.rotation);            
 
-            SubRoom subRoom = room.GetComponent<SubRoom>();
+
             y = Mathf.Max((int)subRoom.size.y, y);
             
             if(Random.Range(0,2)==0){
@@ -78,6 +81,14 @@ public class Monument : Room
                 y = 0;
             }
         }
+        room = SubRoomsRepository.GiveAFinalRoom(transform);
+        subRoom = room.GetComponent<SubRoom>();
+        room.transform.localPosition = cursor + Orientation.Decal(room, room.transform.rotation);            
+
+        cursor += subRoom.size;
+        newSize.x = Mathf.Max(newSize.x, cursor.x);
+        newSize.z = Mathf.Max(newSize.z, cursor.z);
+        newSize.y = cursor.y;
         size = newSize;
     }
     protected override void OnDrawGizmosSelected()
