@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   socket: {fileID: 8107340644286950979}
   sphereInteractable: {fileID: 0}
+  sphereManager: {fileID: 0}
 --- !u!114 &4507213076442978508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -140,6 +141,12 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 673550158998432138}
         m_TargetAssemblyTypeName: SphereRecallButton, Assembly-CSharp
@@ -153,12 +160,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []

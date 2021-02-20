@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
 
-    public static string[] code;
+    public string[] code;
 
     public string[] availableLetters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y"};
 
-    public static int codeLength = 3;
+    public int codeLength = 3;
 
-    public TextMeshProUGUI codeDisplay;
+    public TextMeshProUGUI[] codeDisplay;
 
     private List<string> proposal = new List<string>();
+
+    public UnityEvent onCodeComplete;
+
+    public bool useOverride;
+    public string[] overrideCode;
 
     string[] GenerateCode() {
         string[] result = new string[codeLength];
@@ -25,7 +31,6 @@ public class GameManager : MonoBehaviour
                 letter = availableLetters[UnityEngine.Random.Range(0, availableLetters.Length)];
             }
             result[i] = letter;
-            Debug.Log(letter);
         }
 
         return result;
@@ -33,7 +38,11 @@ public class GameManager : MonoBehaviour
 
     void Awake() {
         code = GenerateCode();
+        if (useOverride) {
+            code = overrideCode;
+        }
         proposal.Clear();
+        UpdateCodeDisplay();
     }
 
 
@@ -44,11 +53,32 @@ public class GameManager : MonoBehaviour
             proposal.Clear();
         }
         UpdateCodeDisplay();
+        if (VerifyCode()) {
+            onCodeComplete?.Invoke();
+        }
     }
 
 
+    public bool VerifyCode() {
+        bool valid = true;
+        for(int i = 0; i < codeLength; i++) {
+            if (proposal[i] != code[i]) {
+                valid = false;
+                break;
+            }
+        }
+        Debug.Log(valid);
+        return valid;
+    }
+
     public void UpdateCodeDisplay() {
-        codeDisplay.text = String.Join("", proposal);
+        for(int i = 0; i < codeLength; i++) {
+            if (i < proposal.Count) {
+                codeDisplay[i].text = proposal[i];
+            } else {
+                codeDisplay[i].text = "";
+            }
+        }
     }
 
 }

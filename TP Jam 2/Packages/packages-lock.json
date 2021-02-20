@@ -51,6 +51,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.quicksearch": {
+      "version": "2.0.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.render-pipelines.core": {
       "version": "10.3.1",
       "depth": 1,
@@ -135,6 +142,15 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.unity.visualeffectgraph": {
+      "version": "10.3.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.shadergraph": "10.3.1"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
       "version": "1.0.0-pre.2",
