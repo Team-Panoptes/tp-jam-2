@@ -43,6 +43,7 @@ public class PreviewController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (sphereManager == null) return;
         bool canSee = !sphereManager.interactable.isSelected;
         if (canSee != opened) {
             targetAperture = canSee ? openedAperture : closedAperture;
