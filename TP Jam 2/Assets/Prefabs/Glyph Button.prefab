@@ -340,7 +340,6 @@ GameObject:
   m_Component:
   - component: {fileID: 9102545086388471546}
   - component: {fileID: 4494574841041179247}
-  - component: {fileID: 6255154939452267786}
   - component: {fileID: 2042573191163065262}
   - component: {fileID: 7418111593431635485}
   - component: {fileID: 6273283951324743280}
@@ -393,17 +392,11 @@ MonoBehaviour:
       m_Calls: []
   m_HoverEntered:
     m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 523146198553591185}
         m_TargetAssemblyTypeName: GlyphButton, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -412,6 +405,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -448,23 +447,6 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &6255154939452267786
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9112497679905066902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 991c69b8a1b6a444a9177914f77cf7d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TintColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  m_TintOnHover: 0
-  m_TintOnSelection: 1
-  m_TintRenderers:
-  - {fileID: 452750815970811553}
 --- !u!65 &2042573191163065262
 BoxCollider:
   m_ObjectHideFlags: 0

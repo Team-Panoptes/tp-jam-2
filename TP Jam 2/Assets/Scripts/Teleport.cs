@@ -11,7 +11,7 @@ public class Teleport : MonoBehaviour
     public Transform playerTransform;
     public Camera mainCamera;
     private SphereManager sphereManager;
-
+    public SphereRecallButton recall;
 
     // Start is called before the first frame update
     void Start()
@@ -19,20 +19,22 @@ public class Teleport : MonoBehaviour
         teleportSphere = GameObject.FindWithTag("TeleportSphere").transform;
         mainCamera = Camera.main;
         sphereManager = teleportSphere.GetComponent<SphereManager>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
-    void OnEnable() {
-        teleportAction.action.performed += DoTeleport;
-    }
+    // void OnEnable() {
+    //     teleportAction.action.performed += DoTeleport;
+    // }
 
-    void OnDisable() {
-        teleportAction.action.performed -= DoTeleport;
-    }
+    // void OnDisable() {
+    //     teleportAction.action.performed -= DoTeleport;
+    // }
 
-    void DoTeleport(InputAction.CallbackContext context) {
+    public void DoTeleport() {
         if (sphereManager.isActive) {
             Debug.Log("TELEPORT!");
             playerTransform.position = sphereManager.validPositionFound - Vector3.ProjectOnPlane(mainCamera.transform.localPosition, Vector3.up) - Vector3.up * 0.05f;
+            recall.RecallSphere();
         }
     }
 }

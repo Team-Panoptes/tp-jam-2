@@ -35,8 +35,10 @@ public class GameManager : MonoBehaviour
                 letter = availableLetters[UnityEngine.Random.Range(0, availableLetters.Length)];
             }
             result[i] = letter;
-            monuments[i].symbol = letter;
-            monuments[i].number = i + 1;
+            if (i < monuments.Length) {
+                monuments[i].symbol = letter;
+                monuments[i].number = i + 1;
+            }
         }
 
         return result;
@@ -67,7 +69,10 @@ public class GameManager : MonoBehaviour
 
     public bool VerifyCode() {
         bool valid = true;
-        for(int i = 0; i < codeLength; i++) {
+        if (proposal.Count < codeLength) {
+            return false;
+        }
+        for(int i = 0; i < proposal.Count; i++) {
             if (proposal[i] != code[i]) {
                 valid = false;
                 break;

@@ -12,7 +12,7 @@ public class SphereManager : MonoBehaviour
     public Color readyColor;
     public Color inactiveColor;
 
-    private XRBaseInteractable interactable;
+    public XRBaseInteractable interactable;
     public Rigidbody rigidBody;
 
     public XRBaseInteractor interactor;
@@ -90,7 +90,7 @@ public class SphereManager : MonoBehaviour
             found = true;
             capsulePoint = transform.position + new Vector3(offset.x, 0.5f, offset.y);
 
-            colliders = Physics.OverlapCapsule(capsulePoint, capsulePoint + Vector3.up * 1f, 0.5f);
+            colliders = Physics.OverlapCapsule(capsulePoint, capsulePoint + Vector3.up * 1f, 0.3f);
             foreach(Collider col in colliders) {
                 if (!col.CompareTag("TeleportSphere")) {
                     found = false;

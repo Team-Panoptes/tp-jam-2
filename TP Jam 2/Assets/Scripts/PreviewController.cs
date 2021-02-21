@@ -38,11 +38,12 @@ public class PreviewController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sphereManager.isActive != opened) {
-            targetAperture = sphereManager.isActive ? openedAperture : closedAperture;
+        bool canSee = !sphereManager.interactable.isSelected;
+        if (canSee != opened) {
+            targetAperture = canSee ? openedAperture : closedAperture;
             startingAperture = currentAperture;
             currentDuration = transitionTime * Mathf.Abs(targetAperture - startingAperture) / Mathf.Abs(closedAperture - openedAperture);
-            opened = sphereManager.isActive;
+            opened = canSee;
             t = Time.time;
         }
         if (currentAperture != targetAperture) {
