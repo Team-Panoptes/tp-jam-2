@@ -10,6 +10,8 @@ public class Monument : Room
     public Vector3 maxSize = new Vector3(30, 30, 30);
     [Header("Code")]
     public string symbol;
+    public int number;
+    
     public override void Generate()
     {
         if(isGenerated)return;

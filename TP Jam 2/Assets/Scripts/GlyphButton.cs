@@ -13,15 +13,20 @@ public class GlyphButton : MonoBehaviour
     public TextMeshProUGUI text;
 
     private GameManager manager;
+    public bool dontAlertManager;
 
     void Awake() {
-        manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        if (dontAlertManager) {
+            manager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
+        }
     }
 
     public void Press() {
         animator.SetTrigger("Press");
         onPressed?.Invoke();
-        manager.EnterCode(text.text);
+        if(manager != null) {
+            manager.EnterCode(text.text);
+        }
     }
 
 

@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using System.Linq;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     public string[] overrideCode;
 
     string[] GenerateCode() {
+        System.Random rnd = new System.Random();
+        Monument[] monuments = GameObject.FindObjectsOfType<Monument>().OrderBy(x => rnd.Next()).ToArray();
+
         string[] result = new string[codeLength];
         for (int i = 0; i < codeLength; i++) {
             string letter = availableLetters[UnityEngine.Random.Range(0, availableLetters.Length)];
@@ -31,6 +35,8 @@ public class GameManager : MonoBehaviour
                 letter = availableLetters[UnityEngine.Random.Range(0, availableLetters.Length)];
             }
             result[i] = letter;
+            monuments[i].symbol = letter;
+            monuments[i].number = i + 1;
         }
 
         return result;
