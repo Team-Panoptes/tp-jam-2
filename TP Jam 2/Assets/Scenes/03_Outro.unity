@@ -149,7 +149,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 49108281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1733074465c41f4481a7885eb12365e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1a5a3e914cb220c48b449a1754295efe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &49108283
@@ -889,7 +889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: StartGame, Assembly-CSharp
+      value: EndGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 9024914832751056848, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
       propertyPath: m_RootOrder
