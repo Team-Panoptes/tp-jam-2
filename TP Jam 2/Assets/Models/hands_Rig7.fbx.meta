@@ -1,24 +1,27 @@
 fileFormatVersion: 2
-guid: ec8a77f91e6ca544dbe599ad4bb76819
+guid: d190ae8bd09a87a4bac67b89775073ee
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
-  externalObjects:
+  internalIDToNameTable:
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 5211958315161898360, guid: 158da29fb84eb4e489a2a19225c70571, type: 3}
+      74: -6165927726376564078
+    second: Armature|Action_DevilHorn
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.012
-    second: {fileID: 5211958315161898360, guid: 158da29fb84eb4e489a2a19225c70571, type: 3}
+      74: -3302011511392457564
+    second: Armature|Action_IndexPointe
   - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.013
-    second: {fileID: 2100000, guid: a0427cf339e5891468d5f2b433b2d44a, type: 2}
+      74: 8189495507476854401
+    second: Armature|Action_Naturel
+  - first:
+      74: 755033018897941816
+    second: Armature|Action_Poing
+  - first:
+      74: -1692865989415050016
+    second: Armature|Actions
+  - first:
+      74: 5508062484833401239
+    second: Armature|PoseLib
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,7 +54,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
