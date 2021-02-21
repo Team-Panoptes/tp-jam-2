@@ -35743,6 +35743,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7185052289568537647, guid: c23ecafed635ebc4495204146f314315, type: 3}
+      propertyPath: songs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8505831015638235339, guid: c23ecafed635ebc4495204146f314315, type: 3}
       propertyPath: m_RootOrder
       value: 6
