@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3c1b7e9450bc344a25f462d59487b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 5, y: 4, z: 5}
+  size: {x: 5, y: 10, z: 5}
   entryPrefabs: []
   groundPrefabs:
   - {fileID: 919132149155446097, guid: 58faa0b9c1407834fa46251269ab0820, type: 3}

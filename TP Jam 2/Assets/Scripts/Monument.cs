@@ -84,13 +84,14 @@ public class Monument : Room
                         int x = Mathf.Max((int)doorInPlace.x + (int)Random.Range(-2, 3), 0);
                         cursor = new Vector3(x, cursor.y + y, 0);}
                 else{
-                    cursor.y += y;
-                    cursor.z -= subRoom.size.z;
-                    cursor.x -= subRoom.size.x;
+                    cursor = room.transform.localPosition + subRoom.size - Orientation.Decal(room, room.transform.rotation);
+                    if(Random.Range(0,2) == 0) cursor.x -= subRoom.size.x;
+                    else cursor.z -= subRoom.size.z;
                 }
                 y = 0;
             }
         }
+        
         room = SubRoomsRepository.GiveAFinalRoom(transform);
         subRoom = room.GetComponent<SubRoom>();
         room.transform.localPosition = cursor + Orientation.Decal(room, room.transform.rotation);            
