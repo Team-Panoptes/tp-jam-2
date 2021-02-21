@@ -82,6 +82,20 @@ MonoBehaviour:
   number: {fileID: 6319521809769738831}
   letter: {fileID: 5330705393207513925}
   button: {fileID: 1900386376204536847}
+--- !u!114 &1986367590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4158344676931045161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc18a1459ae8c24ab35e8465112ae07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 4158344677151485299}
+  particles: {fileID: 3374101150813339739}
 --- !u!1001 &860160526511507873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,9 +284,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b5279f6e85a3342ab914fc4fa9d747, type: 3}
+--- !u!1 &4158344676931045161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7411179090598522605, guid: 11b5279f6e85a3342ab914fc4fa9d747, type: 3}
+  m_PrefabInstance: {fileID: 6876051524782516676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4158344676931045160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7411179090598522604, guid: 11b5279f6e85a3342ab914fc4fa9d747, type: 3}
+  m_PrefabInstance: {fileID: 6876051524782516676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!120 &4158344677151485299 stripped
+LineRenderer:
+  m_CorrespondingSourceObject: {fileID: 7411179090913379511, guid: 11b5279f6e85a3342ab914fc4fa9d747, type: 3}
+  m_PrefabInstance: {fileID: 6876051524782516676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &3374101150813339739 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8196431960336673183, guid: 11b5279f6e85a3342ab914fc4fa9d747, type: 3}
   m_PrefabInstance: {fileID: 6876051524782516676}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7162140261694908762
@@ -433,9 +462,41 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
       propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 6761061707059977428}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1986367590}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: Off
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TurnOffLaserBeam, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8826042118359557867, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 9024914832751056848, guid: 9ce264c3bd3b2b345b08846286bb18d2, type: 3}
       propertyPath: m_RootOrder
       value: 2
