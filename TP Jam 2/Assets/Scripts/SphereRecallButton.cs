@@ -9,12 +9,14 @@ public class SphereRecallButton : MonoBehaviour
     public XRBaseInteractor socket;
     public XRBaseInteractable sphereInteractable;
     public SphereManager sphereManager;
+    public Rigidbody sphereRigidBody;
 
     // Start is called before the first frame update
     void Start()
     {
         sphereInteractable = GameObject.FindWithTag("TeleportSphere").GetComponent<XRBaseInteractable>();
         sphereManager = sphereInteractable.GetComponent<SphereManager>();
+        sphereRigidBody = sphereInteractable.GetComponent<Rigidbody>();
     }
 
     public void RecallSphere() {
@@ -28,7 +30,10 @@ public class SphereRecallButton : MonoBehaviour
         //     sphereInteractable.selectExited?.Invoke(args);
         }
         sphereInteractable.transform.position = socket.attachTransform.position;
-        StartCoroutine(ReenableInteractor(interactor));
+        sphereRigidBody.velocity = Vector3.zero;
+        if (interactor) {
+            StartCoroutine(ReenableInteractor(interactor));
+        }
     }
 
     IEnumerator ReenableInteractor(XRBaseInteractor interactor)  {

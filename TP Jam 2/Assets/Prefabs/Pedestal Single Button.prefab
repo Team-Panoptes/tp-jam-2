@@ -183,6 +183,42 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: dontAlertManager
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6285283787440136451, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
+      propertyPath: onPressed.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8457068502768547146, guid: e22128ea5498ed945afa001b8fb6be09, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068

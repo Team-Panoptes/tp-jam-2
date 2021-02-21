@@ -17,10 +17,15 @@ public class PreviewController : MonoBehaviour
     public bool opened = false;
     private float startTime;
 
+    [SerializeField]
     private float t;
+    [SerializeField]
     private float startingAperture;
+    [SerializeField]
     private float targetAperture;
+    [SerializeField]
     private float currentDuration;
+    [SerializeField]
     private float currentAperture;
     private Image image;
     private CanvasRenderer renderer;
@@ -47,9 +52,10 @@ public class PreviewController : MonoBehaviour
             t = Time.time;
         }
         if (currentAperture != targetAperture) {
-            currentAperture = Mathf.SmoothStep(startingAperture, targetAperture, Time.time - t / currentDuration);
-            material = renderer.GetMaterial();
-            material.SetFloat("_Aperture", currentAperture);
+            currentAperture = Mathf.SmoothStep(startingAperture, targetAperture, Mathf.Clamp01((Time.time - t) / currentDuration));
+            //material = renderer.GetMaterial();
+            //material.SetFloat("_Aperture", currentAperture);
+            renderer.GetMaterial().SetFloat("_Aperture", currentAperture);
             //renderer.SetMaterial(material, 0);
         }
     }

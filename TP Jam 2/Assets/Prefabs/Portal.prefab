@@ -57,6 +57,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8217c6c460ceb0846a8c6c9d4100cac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onSphereGoesTrough:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6213835796269913461
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +115,13 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 13.427451, z: 16, w: 0}
+        m_Name: Particle Color
+        m_Overridden: 1
+      - m_Value: {x: 0, y: 0.9999999, z: 0.9005235, w: 0}
+        m_Name: Circle Color
+        m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
