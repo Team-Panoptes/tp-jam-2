@@ -30,7 +30,12 @@ ModelImporter:
   - first:
       74: 5508062484833401239
     second: Armature|PoseLib
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Bras
+    second: {fileID: 2100000, guid: acdab17a120439946aff5ae6d8509273, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
