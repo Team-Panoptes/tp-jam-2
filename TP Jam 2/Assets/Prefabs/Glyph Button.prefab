@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
     m_PersistentCalls:
@@ -530,3 +530,4 @@ MonoBehaviour:
       m_Calls: []
   animator: {fileID: 6273283951324743280}
   text: {fileID: 2110370991891426600}
+  dontAlertManager: 0
