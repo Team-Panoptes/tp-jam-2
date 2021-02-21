@@ -30,6 +30,12 @@ ModelImporter:
   - first:
       74: 5508062484833401239
     second: Armature|PoseLib
+  - first:
+      74: 885944232402757753
+    second: Armature|Action
+  - first:
+      74: -9125523489441110064
+    second: Armature|Action.001
   externalObjects:
   - first:
       type: UnityEngine:Material
