@@ -289,7 +289,7 @@ MonoBehaviour:
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
   m_ThrowOnDetach: 1
-  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingDuration: 0.15
   m_ThrowSmoothingCurve:
     serializedVersion: 2
     m_Curve:
@@ -326,3 +326,4 @@ MonoBehaviour:
   inactiveColor: {r: 1, g: 0, b: 0, a: 0}
   rigidBody: {fileID: 8505831015638235333}
   interactor: {fileID: 0}
+  validPositionFound: {x: 0, y: 0, z: 0}
