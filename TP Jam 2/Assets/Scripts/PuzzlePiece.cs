@@ -10,9 +10,11 @@ public class PuzzlePiece : Piece
     public bool applyRotation = false;
     public Color color = Color.green;
     public bool isFilled = false;
+    public bool initializeItSelf = false;
     // Start is called before the first frame update
     void Start()
     {
+        if(initializeItSelf)Fill();
     }
 
     public void Fill()
