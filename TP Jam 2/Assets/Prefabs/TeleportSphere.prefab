@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Colliders: []
   m_InteractionLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 119
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
     m_PersistentCalls:
@@ -324,5 +324,7 @@ MonoBehaviour:
   pointLight: {fileID: 8190156702871700587}
   readyColor: {r: 0.035793543, g: 1, b: 0, a: 0}
   inactiveColor: {r: 1, g: 0, b: 0, a: 0}
+  interactable: {fileID: 0}
   rigidBody: {fileID: 8505831015638235333}
   interactor: {fileID: 0}
+  validPositionFound: {x: 0, y: 0, z: 0}
