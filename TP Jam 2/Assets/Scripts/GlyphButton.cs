@@ -28,11 +28,11 @@ public class GlyphButton : MonoBehaviour
         if(manager != null) {
             manager.EnterCode(text.text);
         }
-        HoverExitEventArgs args = new HoverExitEventArgs();
-        args.interactable = hoverArgs.interactable;
-        args.interactor = hoverArgs.interactor;
-        args.isCanceled = false;
-        StartCoroutine(CancelHover(hoverArgs.interactor, args));
+        // HoverExitEventArgs args = new HoverExitEventArgs();
+        // args.interactable = hoverArgs.interactable;
+        // args.interactor = hoverArgs.interactor;
+        // args.isCanceled = false;
+        // StartCoroutine(CancelHover(hoverArgs.interactor, args));
     }
 
     IEnumerator CancelHover(XRBaseInteractor interactor, HoverExitEventArgs args) {
