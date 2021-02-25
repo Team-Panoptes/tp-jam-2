@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/00_Intro.unity
+    guid: ab307d9beddaa88478ba1d61c293973d
+  - enabled: 1
+    path: Assets/Scenes/01_Tutorial.unity
+    guid: 0956e37d0c5e9cc469a984c8e13fb496
+  - enabled: 1
+    path: Assets/Scenes/02_Game.unity
+    guid: b7bbb089864a2ac439d68ceb58e7ea58
+  - enabled: 1
+    path: Assets/Scenes/03_Outro.unity
+    guid: e0eb71af97ca5f74d88eacc42d59de79
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: a3e6fc34338deab4e9b6cbdd611417f5, type: 2}
+    Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 2a3d486ff96cb194290143f876e8d1fe, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: 3bba812e902a30d4eaec764c0c8d9875, type: 2}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: fa4873ac43fc25a45b4d47d8f088668c, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c6263a2d40dee0a488657b428433cf85, type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 6f2864722d7b24141a8893d08e4fc965, type: 2}
