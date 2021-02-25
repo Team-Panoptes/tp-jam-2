@@ -84,21 +84,26 @@ public class SphereManager : MonoBehaviour
         Vector2 offset = Vector2.zero;
         Collider[] colliders;
         Vector3 capsulePoint;
+        RaycastHit hit;
 
         while (tries > 0 && !found) {
             tries -= 1;
             found = true;
             capsulePoint = transform.position + new Vector3(offset.x, 0.5f, offset.y);
 
-            colliders = Physics.OverlapCapsule(capsulePoint, capsulePoint + Vector3.up * 1f, 0.3f);
-            foreach(Collider col in colliders) {
-                if (!col.CompareTag("TeleportSphere")) {
-                    found = false;
-                    break;
+            if (Physics.Raycast(transform.position + new Vector3(offset.x, 0f, offset.y), -Vector3.up, out hit, 0.06f)) {
+                colliders = Physics.OverlapCapsule(capsulePoint, capsulePoint + Vector3.up * 1f, 0.3f);
+                foreach(Collider col in colliders) {
+                    if (!col.CompareTag("TeleportSphere")) {
+                        found = false;
+                        break;
+                    }
                 }
-            }
-            if (found) {
-                validPositionFound = transform.position + new Vector3(offset.x, 0.0f, offset.y);
+                if (found) {
+                    validPositionFound = transform.position + new Vector3(offset.x, 0.0f, offset.y);
+                }
+            } else {
+                found = false;
             }
             offset = Random.insideUnitCircle * 0.5f;
         }
