@@ -272,7 +272,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: <size=80%>A Game by\n<size=100%>Team Panoptes<size=60%>\n\nBastien Gorissen\nThomas
-    Stassin\nDavid Colignon\nNgan Pickery\n\nIcons by Lorc<size=50%>\ngame-icons.net
+    Stassin\nDavid Collignon\nNgan Pickery\n\nIcons by Lorc<size=50%>\ngame-icons.net
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9ff38188bc804cd498f4af2ca24746f5, type: 2}
   m_sharedMaterial: {fileID: -3660636683991760572, guid: 9ff38188bc804cd498f4af2ca24746f5, type: 2}
